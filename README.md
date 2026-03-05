@@ -111,10 +111,11 @@ Supported formats: `.png`, `.jpg`, `.webp`. Until images are added, styled initi
 5. The world responds — and the story continues
 
 
-<img width="624" height="685" alt="image" src="https://github.com/user-attachments/assets/62d8ffd0-d880-4bdd-86ea-a1866109fe7b" />
+<img width="686" height="304" alt="Screenshot 2026-03-05 230812" src="https://github.com/user-attachments/assets/eb2ce483-eccc-4093-b684-70fdb8b4d927" />
 
 
-<img width="536" height="623" alt="image" src="https://github.com/user-attachments/assets/868a7b2c-0cb1-49b1-bc27-e89b36c627f5" />
+<img width="511" height="434" alt="Screenshot 2026-03-05 230430" src="https://github.com/user-attachments/assets/98e58bcd-dd9f-4e8d-9551-a488e514e158" />
+
 
 
 ## License
