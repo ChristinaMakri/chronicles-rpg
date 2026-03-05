@@ -9,33 +9,35 @@ An AI-powered interactive fantasy RPG that runs in the browser. Inspired by tabl
 - **Dungeon Master** — narrates the world with vivid, sensory descriptions; introduces creatures, dangers, and mysteries
 - **Dynamic stories** — every session starts differently: varied locations, threats, moods, and antagonists
 - **Narrative combat** — turn-based battles with real consequences, no dice rolls or stats
-- **Character images** — drop your own artwork into `public/characters/` and they appear automatically
+- **Character images** — drop your own artwork into `frontend/public/characters/` and they appear automatically
 - **Dark fantasy UI** — Cinzel and Crimson Text fonts, dark theme with character color coding
 
 ## Tech Stack
 
-- [Next.js 15](https://nextjs.org/) — frontend + API routes
+- [Python](https://www.python.org/) + [FastAPI](https://fastapi.tiangolo.com/) — backend API
+- [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/) + [Vite](https://vite.dev/) — frontend
 - [Groq](https://groq.com/) — free LLM inference (Llama 4 Maverick)
-- [Vercel](https://vercel.com/) — deployment (free tier)
+- [Railway](https://railway.app/) — backend deployment
+- [Vercel](https://vercel.com/) — frontend deployment
 
 ## Getting Started
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/fantasy-rpg.git
-cd fantasy-rpg
+git clone https://github.com/ChristinaMakri/chronicles-rpg.git
+cd chronicles-rpg
 ```
 
-### 2. Install dependencies
+### 2. Backend setup
 
 ```bash
-npm install
+cd backend
+pip install -r requirements.txt
+cp .env.example .env
 ```
 
-### 3. Set up environment variables
-
-Create a `.env.local` file in the root:
+Edit `.env` and add your Groq API key:
 
 ```env
 GROQ_API_KEY=your_groq_api_key_here
@@ -44,37 +46,51 @@ GROQ_MODEL=meta-llama/llama-4-maverick-17b-128e-instruct
 
 Get a free API key at [console.groq.com](https://console.groq.com).
 
-### 4. Run locally
+Start the backend:
 
 ```bash
+uvicorn main:app --reload
+```
+
+### 3. Frontend setup
+
+```bash
+cd frontend
+npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:5173](http://localhost:5173).
 
 ## Adding Character Images
 
-Place your images in the `public/characters/` directory:
+Place your images in `frontend/public/characters/`:
 
 ```
-public/
-  characters/
-    liora.png
-    brom.png
-    tharos.png
-    mira.png
-    dungeon-master.png
+frontend/public/characters/
+  liora.png
+  brom.png
+  tharos.png
+  mira.png
+  dungeon-master.png
 ```
 
 Supported formats: `.png`, `.jpg`, `.webp`. Until images are added, styled initials are shown as placeholders.
 
-## Deployment on Vercel
+## Deployment
 
-1. Push this repository to GitHub
-2. Go to [vercel.com](https://vercel.com) and import the repository
-3. Add environment variables in the Vercel project settings:
-   - `GROQ_API_KEY`
-   - `GROQ_MODEL`
+**Backend → Railway**
+
+1. Connect your GitHub repo on [railway.app](https://railway.app)
+2. Set root directory to `backend`
+3. Add environment variables: `GROQ_API_KEY`, `GROQ_MODEL`
+4. Railway uses `railway.toml` to start the server automatically
+
+**Frontend → Vercel**
+
+1. Import the repo on [vercel.com](https://vercel.com)
+2. Set root directory to `frontend`
+3. Add environment variable: `VITE_API_URL=https://your-railway-backend-url`
 4. Deploy
 
 ## Characters
@@ -91,9 +107,8 @@ Supported formats: `.png`, `.jpg`, `.webp`. Until images are added, styled initi
 1. Select your character
 2. The Dungeon Master opens the scene
 3. Your companions react in character
-4. A prompt asks what **you** want to do
-5. Type your action and press Enter
-6. The world responds — and the story continues
+4. Type your action and press Enter
+5. The world responds — and the story continues
 
 
 <img width="624" height="685" alt="image" src="https://github.com/user-attachments/assets/62d8ffd0-d880-4bdd-86ea-a1866109fe7b" />
