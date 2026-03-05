@@ -99,6 +99,9 @@ Supported formats: `.png`, `.jpg`, `.webp`. Until images are added, styled initi
 <img width="624" height="685" alt="image" src="https://github.com/user-attachments/assets/62d8ffd0-d880-4bdd-86ea-a1866109fe7b" />
 
 
+<img width="536" height="623" alt="image" src="https://github.com/user-attachments/assets/868a7b2c-0cb1-49b1-bc27-e89b36c627f5" />
+
+
 ## License
 
 MIT
