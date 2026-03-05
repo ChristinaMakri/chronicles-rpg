@@ -95,6 +95,10 @@ Supported formats: `.png`, `.jpg`, `.webp`. Until images are added, styled initi
 5. Type your action and press Enter
 6. The world responds — and the story continues
 
+
+<img width="624" height="685" alt="image" src="https://github.com/user-attachments/assets/62d8ffd0-d880-4bdd-86ea-a1866109fe7b" />
+
+
 ## License
 
 MIT
